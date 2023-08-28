@@ -1,10 +1,28 @@
-import React, { useState } from 'react';
-import data from "../../../fakeData/products.json"
+import React, { useEffect, useState } from 'react';
+// import data from "../../../../public/products.json"
 import './Product.css'
+import ProductCard from '../ProductCard/ProductCard';
 const Products = () => {
 
 
-   const [products, setProducts] = useState(data)
+   const [products, setProducts] = useState([])
+
+   useEffect(() => {
+      fetch('products.json')
+         .then(res => res.json())
+         .then(data => setProducts(data))
+   }, [])
+
+
+   const [cart, setCart] = useState([])
+
+   const addToCart = (product) => {
+      const newCart = [...cart, product]
+      setCart(newCart);
+      console.log(product);
+   }
+
+
 
    // const [search, setSearch] = useState('');
 
@@ -36,6 +54,7 @@ const Products = () => {
          {/* categories btn */}
          <div className='ct_btn'>
             <h2>data {products.length}</h2>
+            <h2>cart  {cart.length}</h2>
 
             {categories.map((category, index) => (
                <button
@@ -52,19 +71,14 @@ const Products = () => {
 
          <div className="pr_main">
             {
-               filteredItems.map((product, index) => (
-                  <div className="product_box" key={product.id}>
-                     <div className='pr_img'>
-                        <img src={product.img} alt={product.name} />
-                     </div>
-                     <div className="pr_text">
-                        <h4> $ {product.price}</h4>
-                        <p>{product.category}</p>
-                        <h3> {product.name}</h3>
-                     </div>
-                     <button className="cart_btn">Add Cart</button>
-                  </div>
-               ))
+               filteredItems.map(product =>
+                  <ProductCard
+
+                     product={product}
+                     addToCart={addToCart}
+                     key={product.id}>
+
+                  </ProductCard>)
             }
          </div>
       </div>

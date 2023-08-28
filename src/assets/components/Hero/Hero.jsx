@@ -8,7 +8,7 @@ const Hero = () => {
 
          <Products />
 
-         {/* <Cart /> */}
+         <Cart />
 
       </div>
    );

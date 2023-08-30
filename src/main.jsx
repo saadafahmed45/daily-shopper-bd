@@ -8,7 +8,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Cart from './assets/components/Cart/Cart.jsx'
+import MyCart from './assets/components/Cart/MyCart.jsx'
 
 const router = createBrowserRouter([
   {
@@ -17,7 +17,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/cart",
-    element: <Cart />,
+    element: <MyCart />,
   },
 ]);
 

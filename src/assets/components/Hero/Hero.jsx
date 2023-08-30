@@ -1,14 +1,18 @@
 import React from 'react';
-import Cart from '../Cart/Cart';
 import './Hero.css'
 import Products from '../Products/Products';
+import MyCart from '../Cart/MyCart';
 const Hero = () => {
+
+
+
+
    return (
       <div className="hro">
 
          <Products />
 
-         <Cart />
+         <MyCart />
 
       </div>
    );

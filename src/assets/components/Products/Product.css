@@ -38,5 +38,13 @@ button.cart_btn {
     font-size: 15px;
     padding: 5px 10px;
     color: #fff;
+    border-radius: 5px;
     margin-top: 10px;
+   border:none
+
+}
+
+.active{
+    background: coral;
+   /* border:none */
 }

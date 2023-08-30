@@ -12,7 +12,6 @@ const Header = () => {
                <a href="">Home</a>
                <a href="">About</a>
                <a href="">Cart</a>
-               <a href="">Contact</a>
                <a href="">Login</a>
                {/* <Link to="/cart"> card</Link> */}
             </ul>

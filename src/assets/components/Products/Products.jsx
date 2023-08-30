@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 // import data from "../../../../public/products.json"
 import './Product.css'
 import ProductCard from '../ProductCard/ProductCard';
+import Cart from '../Cart/Cart';
 const Products = () => {
 
 
@@ -19,7 +20,7 @@ const Products = () => {
    const addToCart = (product) => {
       const newCart = [...cart, product]
       setCart(newCart);
-      console.log(product);
+      // console.log(product);
    }
 
 
@@ -53,7 +54,7 @@ const Products = () => {
 
          {/* categories btn */}
          <div className='ct_btn'>
-            <h2>data {products.length}</h2>
+            {/* <h2>data {products.length}</h2> */}
             <h2>cart  {cart.length}</h2>
 
             {categories.map((category, index) => (
@@ -65,6 +66,9 @@ const Products = () => {
                   {category}
                </button>
             ))}
+         </div>
+         <div>
+            <Cart cart={cart}></Cart>
          </div>
          {/* search  */}
 
